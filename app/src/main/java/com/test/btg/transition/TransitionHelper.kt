@@ -10,19 +10,19 @@ import com.test.btg.R
 object TransitionHelper {
 
     @JvmStatic
-    fun enableTransition( activity : Activity ) {
-        if(isPossibleUseTransition()) {
+    fun enableTransition(activity: Activity) {
+        if (isPossibleUseTransition()) {
 
-             activity
+            activity
                 .window
                 .sharedElementExitTransition = TransitionInflater
-                                                    .from( activity )
-                                                    .inflateTransition( R.transition.transitions )
+                .from(activity)
+                .inflateTransition(R.transition.transitions)
         }
     }
 
     @JvmStatic
-    fun isPossibleUseTransition() : Boolean {
+    fun isPossibleUseTransition(): Boolean {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
     }
 
@@ -31,14 +31,28 @@ object TransitionHelper {
      * use ActivityOptionsCompat.makeSceneTransitionAnimation() method
      */
     @JvmStatic
-    inline fun startActivity(activity : Activity ,it: Intent ,crossinline getter : () -> ActivityOptionsCompat) {
+    inline fun startActivity(activity: Activity, it: Intent, crossinline getter: () -> ActivityOptionsCompat) {
 
-        if(isPossibleUseTransition()) {
-            activity.startActivity( it , getter().toBundle() )
+        if (isPossibleUseTransition()) {
+            activity.startActivity(it, getter().toBundle())
         } else {
-            activity.startActivity( it )
+            activity.startActivity(it)
         }
 
+    }
+
+    inline fun startActivityForResult(
+        activity: Activity,
+        it: Intent,
+        requestCode: Int,
+        crossinline getter: () -> ActivityOptionsCompat
+    ) {
+
+        if (isPossibleUseTransition()) {
+            activity.startActivityForResult(it, requestCode, getter().toBundle())
+        } else {
+            activity.startActivityForResult(it, requestCode)
+        }
     }
 
 

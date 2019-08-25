@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">btg</string>
+    <string name="tab_movie">Filmes</string>
+    <string name="tab_movie_favorite">Favoritos</string>
+    <string name="to_favorite">Favoritar</string>
+    <string name="favored_movie">Filme favoritado</string>
+    <string name="search">procurar</string>
+    <string name="not_found_movie">atualmente não há filmes para mostrar</string>
 </resources>

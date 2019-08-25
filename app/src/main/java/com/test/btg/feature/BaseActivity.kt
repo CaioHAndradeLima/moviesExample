@@ -1,4 +1,4 @@
-package com.test.btg
+package com.test.btg.feature
 
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
