@@ -12,6 +12,5 @@ Retrofit - Realiza requisição de rede.
 O que poderia ser feito no projeto para melhoria:
 Modularização - Torna o build mais rápido pois o Android Studio só builda novamente o módulo que foi alterado, além da CI poder trabalhar melhor em relação aos testes e ser mais rápida reduzindo custos. A organização do código também facilita o entendimento e manutenção.
 Gradle - As versões das dependências estão organizadas como variáveis, para a modularização está em um cenário compatível.
-Design Pattern - Definir um Design Pattern para a arquitetura do projeto. Pode se usar Clean Code com MVVM ou MVP. Ambos separam as classes por responsábilidades para facilitar o desenvolvimento e manutenção.
 Att Caio Henrique
 
